@@ -1,5 +1,4 @@
 import Callbtn from "./callbtn";
-import "../styles/footer.css";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -19,6 +18,7 @@ export default function Footer() {
             <a
               href="https://www.instagram.com/asparksjr/?hl=en"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +35,7 @@ export default function Footer() {
             <a
               href="https://www.facebook.com/championscarpet530/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

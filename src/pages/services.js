@@ -1,3 +1,8 @@
+import Transition from "../components/transition";
+import Footer from "../components/footer";
+
+
+
 export default function Services() {
   const services = [
     {
@@ -14,8 +19,8 @@ export default function Services() {
           <g
             fill="none"
             stroke="#E36414"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path d="m7.5 9l-3 .54L5 6.5L10.73.79a1 1 0 0 1 1.42 0l1.06 1.06a1 1 0 0 1 0 1.42Z" />
             <path d="M12 9.5v3a1 1 0 0 1-1 1H1.5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3" />
@@ -127,12 +132,12 @@ export default function Services() {
           <path
             fill="#E36414"
             d="M20 14h-4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1m-.4 6.6h-3.2v-5.2h3.2Z"
-            class="clr-i-outline clr-i-outline-path-1"
+            className="clr-i-outline clr-i-outline-path-1"
           />
           <path
             fill="#E36414"
             d="m33.71 12.38l-4.09-4.09a1 1 0 0 0-.7-.29h-5V6.05A2 2 0 0 0 22 4h-8.16A1.92 1.92 0 0 0 12 6.05V8H7.08a1 1 0 0 0-.71.29l-4.08 4.09a1 1 0 0 0-.29.71V28a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V13.08a1 1 0 0 0-.29-.7M14 6h8v2h-8Zm18 11H22v1.93h10V28H4v-9.07h10V17H4v-3.5L7.5 10h21l3.5 3.5Z"
-            class="clr-i-outline clr-i-outline-path-2"
+            className="clr-i-outline clr-i-outline-path-2"
           />
           <path fill="none" d="M0 0h36v36H0z" />
         </svg>
@@ -152,12 +157,12 @@ export default function Services() {
           <g
             fill="none"
             stroke="#E36414"
-            stroke-linejoin="round"
-            stroke-width="4"
+            strokeLinejoin="round"
+            strokeWidth="4"
           >
             <rect width="36" height="36" x="6" y="6" rx="3" />
             <path
-              stroke-linecap="round"
+              strokeLinecap="round"
               d="M28 6L6 28m36-8L20 42M40 8L8 40m4-18l7 7m10-10l7 7"
             />
           </g>
@@ -177,14 +182,14 @@ export default function Services() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M2.08333 6.25V0H0V37.5H2.08333V16.6667H5.20833V18.75H19.7917V15.2781H22.9167C23.4692 15.2781 23.9991 15.4976 24.3898 15.8883C24.7805 16.279 25 16.8089 25 17.3615V17.7083H22.9167V26.0417H37.5V17.7083H35.4167V16.6667C35.4167 10.9135 30.7531 6.25 25 6.25H19.7917V4.16667H13.5417V2.08333H20.8333C21.1096 2.08333 21.3746 1.97359 21.5699 1.77824C21.7653 1.58289 21.875 1.31793 21.875 1.04167C21.875 0.765399 21.7653 0.500448 21.5699 0.305097C21.3746 0.109747 21.1096 0 20.8333 0H4.16667C3.8904 0 3.62545 0.109747 3.4301 0.305097C3.23475 0.500448 3.125 0.765399 3.125 1.04167C3.125 1.31793 3.23475 1.58289 3.4301 1.77824C3.62545 1.97359 3.8904 2.08333 4.16667 2.08333H11.4583V4.16667H5.20833V6.25H2.08333ZM33.3333 16.6667C33.3333 14.4565 32.4554 12.3369 30.8926 10.7741C29.3298 9.21131 27.2101 8.33333 25 8.33333H19.7917V13.1948H22.9167C24.0217 13.1948 25.0815 13.6338 25.8629 14.4152C26.6443 15.1966 27.0833 16.2564 27.0833 17.3615V17.7083H33.3333V16.6667ZM35.4167 19.7917H25V23.9583H35.4167V19.7917ZM17.7083 6.25H7.29167V16.6667H17.7083V6.25ZM5.20833 14.5833H2.08333V8.33333H5.20833V14.5833Z"
             fill="#E36414"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M30.7291 37.4999C32.7426 37.4999 34.3749 35.8041 34.3749 33.7124C34.3749 30.3978 30.7291 27.0833 30.7291 27.0833C30.7291 27.0833 27.0833 30.3978 27.0833 33.7124C27.0833 35.8041 28.7155 37.4999 30.7291 37.4999ZM30.7291 35.4166C31.5176 35.4166 32.2916 34.7291 32.2916 33.7124C32.2916 32.7416 31.7166 31.5385 30.8718 30.3864C30.8248 30.3224 30.7773 30.2588 30.7291 30.1958C30.6812 30.2583 30.6333 30.3218 30.5864 30.3864C29.7426 31.5374 29.1666 32.7405 29.1666 33.7124C29.1666 34.7291 29.9405 35.4166 30.7291 35.4166Z"
             fill="#E36414"
           />
@@ -284,7 +289,7 @@ export default function Services() {
   ];
 
   return (
-    <div>
+    <Transition>
       <div className="container bg-accent">
         <h2 className="fw-semi-bold fs-300 text-neutral">
           HOME <span className="fw-regular"> &gt; SERVICES</span>
@@ -304,9 +309,9 @@ export default function Services() {
         </p>
       </section>
       <ul>
-        {services.map((service) => {
+        {services.map((service,key) => {
           return (
-            <li>
+            <li key={key}>
               {service.icon}
               <h2 className="fw-semi-bold fs-600 text-accent-500">
                 {service.service}
@@ -318,6 +323,7 @@ export default function Services() {
           );
         })}
       </ul>
-    </div>
+      <Footer/>
+    </Transition>
   );
 }

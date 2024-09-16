@@ -1,11 +1,15 @@
-export default function Gallary() {
+import Transition from "../components/transition";
+import Footer from "../components/footer";
+
+
+export default function Gallery() {
   return (
-    <div>
+    <Transition>
       <section className="container bg-accent">
         <h2 className="fw-semi-bold fs-300 text-neutral">
-          HOME <span className="fw-regular"> &gt; GALLARY</span>
+          HOME <span className="fw-regular"> &gt; GALLERY</span>
         </h2>
-        <h1 className="fw-bold fs-800 text-neutral">GALLARY</h1>
+        <h1 className="fw-bold fs-800 text-neutral">GALLERY</h1>
       </section>
       <section>
         <hr />
@@ -25,6 +29,7 @@ export default function Gallary() {
           <li>Tile</li>
         </ul>
       </section>
-    </div>
+      <Footer/>
+    </Transition>
   );
 }

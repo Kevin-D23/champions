@@ -3,6 +3,8 @@ import anthony from "../images/anthony.jpg";
 import right_home from "../images/right_home.jpg";
 import left_home from "../images/left_home.jpg";
 import "../styles/home.css";
+import Transition from "../components/transition";
+import Footer from "../components/footer";
 
 export default function Home() {
   const [callbackSent, setCallbackSent] = useState(false);
@@ -61,21 +63,21 @@ export default function Home() {
     });
   };
   return (
-    <div>
+    <Transition className="home">
       <section>
         <img src={anthony} className="desktop" alt="" />
-        <div className="mobile container">
+        <div className="mobile container bg-accent">
           <h1 className="fw-medium fs-800 text-neutral">
             High Quality <span className="fw-black">Cleaning Services</span> for
             all types of facilities
           </h1>
-          <p className="fw-light fw-regular fs-500">
+          <p className="fw-light fw-regular fs-500 text-neutral">
             Our staff is trained to clean everything you need
           </p>
           <a href="#about">
             <button
-              className="button fw-semi-bold fs-300 learn-more text-neutral"
-              datatype="inverted"
+              className="button fw-semi-bold fs-300 learn-more"
+              data-type="inverted"
             >
               LEARN MORE
             </button>
@@ -140,7 +142,9 @@ export default function Home() {
         <h2 className="fw-medium fs-500 text-primary">
           SCHEDULE AN APPOINTMENT:
         </h2>
-        <h1 className="fw-bold fs-800 text-accent-400">530-966-7141</h1>
+        <a className="fw-bold fs-800 text-accent-400" href="tel:+15309667141">
+          530-966-7141
+        </a>
         <h2 className="fw-medium fs-500 text-primary">SEND AN EMAIL</h2>
         <a
           href="mailto:email@email.com"
@@ -240,6 +244,7 @@ export default function Home() {
           <img src={right_home} alt="" className="right-img" />
         </div>
       </section>
-    </div>
+      <Footer />
+    </Transition>
   );
 }

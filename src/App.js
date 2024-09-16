@@ -1,28 +1,29 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Services from "./pages/services";
-import Gallary from "./pages/gallary";
+import Gallery from "./pages/gallery";
 import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
+      <Navbar />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/gallary" element={<Gallary />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<Home />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
+      </AnimatePresence>
     </div>
   );
 }

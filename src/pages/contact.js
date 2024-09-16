@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Transition from "../components/transition";
+import Footer from "../components/footer";
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,7 +62,7 @@ export default function Contact() {
     });
   };
   return (
-    <div>
+    <Transition>
       <div className="container">
         <section className="container bg-accent">
           <h2 className="fw-semi-bold fs-300 text-neutral">
@@ -142,6 +145,7 @@ export default function Contact() {
         <h2>Assistance Hours</h2>
         <p>Mon-Fri 7:00am - 6:00pm</p>
       </div>
-    </div>
+      <Footer/>
+    </Transition>
   );
 }

@@ -6,6 +6,10 @@
   display: block;
 }
 
+.mobile button {
+  border-radius: 5px;
+}
+
 @media (min-width: 50em) {
   .mobile {
     display: none;
@@ -16,11 +20,11 @@
   }
 }
 
+.home form {
+  box-shadow: 5px 6px 4px rgba(0, 0, 0, 10%);
+}
+
 /* .container {
   width: min(1280px, 100% - 2rem);
   margin-inline: auto;
 } */
-
-.learn-more{
-  background-color: var(--clr-accent-600);
-}
