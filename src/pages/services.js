@@ -1,7 +1,8 @@
 import Transition from "../components/transition";
 import Footer from "../components/footer";
-
-
+import "../styles/services.css";
+import TextTransitionUp from "../components/text-transition-up";
+import TextTransitionRight from "../components/text-transition-right";
 
 export default function Services() {
   const services = [
@@ -290,13 +291,44 @@ export default function Services() {
 
   return (
     <Transition>
-      <div className="container bg-accent">
+      <div className="container bg-accent header">
+        <TextTransitionRight>
         <h2 className="fw-semi-bold fs-300 text-neutral">
           HOME <span className="fw-regular"> &gt; SERVICES</span>
         </h2>
         <h1 className="fw-bold fs-800 text-neutral">SERVICES</h1>
+        </TextTransitionRight>
       </div>
-      <section className="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1920"
+        height="888"
+        viewBox="0 0 1920 888"
+        fill="none"
+        className="background"
+      >
+        <path
+          d="M-22 0H1920V632C1147.53 983.003 723.127 962.932 -22 632V0Z"
+          fill="#777777"
+          fill-opacity="5%"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="800"
+        height="892"
+        viewBox="0 0 800 892"
+        fill="none"
+        className="background-mobile"
+      >
+        <path
+          d="M0 0H800V635.003C481.784 987.674 306.953 967.508 0 635.003V0Z"
+          fill="#777777"
+          fill-opacity="0.05"
+        />
+      </svg>
+      <section className="container services-description">
+        <TextTransitionUp>
         <p className="fw-medium fs-400 text-primary">
           Get premium and reliable services for facilities with a 100%
           satisfaction guaranteed! Here we offer a multitude of services ranging
@@ -306,24 +338,28 @@ export default function Services() {
         <p className="fw-regular fs-400 text-primary">
           There's much we have to offer. So, Take your time, look around, and
           learn all there is to know about us.
-        </p>
+        </p></TextTransitionUp>
       </section>
-      <ul>
-        {services.map((service,key) => {
+      <div className="services-container">
+      <ul className="services">
+        {services.map((service, key) => {
           return (
-            <li key={key}>
-              {service.icon}
-              <h2 className="fw-semi-bold fs-600 text-accent-500">
-                {service.service}
-              </h2>
-              <p className="fw-regular fs-400 text-secondary">
-                {service.description}
-              </p>
-            </li>
+            <TextTransitionUp>
+              <li key={key}>
+                {service.icon}
+                <h2 className="fw-semi-bold fs-600 text-accent-500">
+                  {service.service}
+                </h2>
+                <p className="fw-regular fs-400 text-secondary">
+                  {service.description}
+                </p>
+              </li>
+            </TextTransitionUp>
           );
         })}
       </ul>
-      <Footer/>
+      </div>
+      <Footer />
     </Transition>
   );
 }
