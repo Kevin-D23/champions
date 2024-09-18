@@ -1,10 +1,10 @@
 import { useState } from "react";
 import anthony from "../images/anthony.jpg";
-import right_home from "../images/right_home.jpg";
-import left_home from "../images/left_home.jpg";
+import home_img from "../images/home-img.png"
 import "../styles/home.css";
 import Transition from "../components/transition";
 import Footer from "../components/footer";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [callbackSent, setCallbackSent] = useState(false);
@@ -62,16 +62,55 @@ export default function Home() {
       service: "",
     });
   };
+  function handleClick() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <Transition className="home">
-      <section>
-        <img src={anthony} className="desktop" alt="" />
+      <section className="home">
+        <div className="anthony-container">
+          <img src={anthony} className="desktop" alt="" />
+          <svg
+            className="anthony-cover"
+            width="1920"
+            height="568"
+            viewBox="0 0 1920 568"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M225 257C447 732.494 920 640.5 1920 115.5V568H0L225 257Z"
+              fill="#F8F9FA"
+            />
+            <path
+              d="M225 257C447 732.494 920 640.5 1920 115.5V568H0L225 257Z"
+              fill="#F8F9FA"
+            />
+            <path
+              d="M48 62C336 257 756 737.5 1920 115.5V521H0L48 62Z"
+              fill="#FF9500"
+            />
+            <path
+              d="M0 0.5C465 509.5 1004.5 615 1920 152V568H0V0.5Z"
+              fill="#F8F9FA"
+            />
+            <path
+              d="M0 0.5C465 509.5 1004.5 615 1920 152V568H0V0.5Z"
+              fill="#F8F9FA"
+            />
+            <path
+              d="M0 0.5C465 509.5 1004.5 615 1920 152V568H0V0.5Z"
+              fill="#F8F9FA"
+            />
+          </svg>
+        </div>
         <div className="mobile container bg-accent">
           <h1 className="fw-medium fs-800 text-neutral">
             High Quality <span className="fw-black">Cleaning Services</span> for
             all types of facilities
           </h1>
-          <p className="fw-light fw-regular fs-500 text-neutral">
+          <p className="fw-light fs-500">
             Our staff is trained to clean everything you need
           </p>
           <a href="#about">
@@ -83,77 +122,89 @@ export default function Home() {
             </button>
           </a>
         </div>
-        <form onSubmit={handleSubmit}>
-          <h1 className="fw-bold fs-600 text-accent-400">Request a callback</h1>
-          {!callbackSent ? (
-            <h2 className="fw-regular fs-400 text-primary">
-              Enter your details in the form and we will call you back
-            </h2>
-          ) : (
-            <h2 className="fw-regular fs-400 text-primary">
-              Thank you! We will get back to you as soon as possible!
-            </h2>
-          )}
+        <div className="callback-form-container">
+          <form onSubmit={handleSubmit} className="callback-form">
+            <h1 className="fw-bold fs-600 text-accent-400">
+              Request a callback
+            </h1>
+            {!callbackSent ? (
+              <h2 className="fw-light fs-400 text-primary">
+                Enter your details in the form and we will call you back
+              </h2>
+            ) : (
+              <h2 className="fw-regular fs-400 text-primary">
+                Thank you! We will get back to you as soon as possible!
+              </h2>
+            )}
 
-          <label htmlFor="name" className="fw-regular fs-300 text-secondary">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="phone" className="fw-regular fs-300 text-secondary">
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handlePhoneChange}
-            pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
-            required
-          />
-          <label htmlFor="service" className="fw-regular fs-300 text-secondary">
-            Service
-          </label>
-          <select
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            required
+            <label htmlFor="name" className="fw-regular fs-300 text-secondary">
+              <span>{formData.name ? "" : "Name"}</span>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            <label htmlFor="phone" className="fw-regular fs-300 text-secondary">
+              <span>{formData.phone ? "" : "Phone Number"}</span>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+                required
+              />
+            </label>
+
+            <label
+              htmlFor="service"
+              className="fw-regular fs-300 text-secondary"
+            >
+              <span>{formData.service ? "" : "Service"}</span>
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+              >
+                <option value="" disabled></option>
+                <option value={"carpetcleaning"}>Carpet Cleaning</option>
+                <option value={"carpetstretching"}>Carpet Stretching</option>
+                <option value={"other"}>Other</option>
+              </select>
+            </label>
+
+            <button type="submit" className="button">
+              CALL ME BACK
+            </button>
+          </form>
+        </div>
+
+        <div className="contact-info">
+          <h2 className="fw-medium fs-500 text-primary">
+            SCHEDULE AN APPOINTMENT:
+          </h2>
+          <a className="fw-bold fs-800 text-accent-400" href="tel:+15309667141">
+            530-966-7141
+          </a>
+          <h2 className="fw-medium fs-500 text-primary">SEND AN EMAIL:</h2>
+          <a
+            href="mailto:email@email.com"
+            className="fw-medium fs-400 text-accent-400 email"
           >
-            <option value="" disabled></option>
-            <option value={"carpetcleaning"}>Carpet Cleaning</option>
-            <option value={"carpetstretching"}>Carpet Stretching</option>
-            <option value={"other"}>Other</option>
-          </select>
-          <button type="submit" className="button">
-            CALL ME BACK
-          </button>
-        </form>
+            email@email.com
+          </a>
+        </div>
       </section>
-      <div>
-        <h2 className="fw-medium fs-500 text-primary">
-          SCHEDULE AN APPOINTMENT:
-        </h2>
-        <a className="fw-bold fs-800 text-accent-400" href="tel:+15309667141">
-          530-966-7141
-        </a>
-        <h2 className="fw-medium fs-500 text-primary">SEND AN EMAIL</h2>
-        <a
-          href="mailto:email@email.com"
-          className="fw-medium fs-400 text-accent-400"
-        >
-          email@email.com
-        </a>
-      </div>
-      <section className="container">
+
+      <section className="check-container">
         <ul className="fw-bold fs-400 text-primary">
           <li>
             <svg
@@ -213,10 +264,12 @@ export default function Home() {
           </li>
         </ul>
       </section>
-      <section className="container" id="about">
-        <div>
-          <hr />
-          <h3 className="fw-semi-bold fs-500 text-accent-300">WHO WE ARE</h3>
+      <section className="container about-container" id="about">
+        <div className="description">
+          <div className="title">
+            <div></div>
+            <h3 className="fw-semi-bold fs-500 text-accent-300">WHO WE ARE</h3>
+          </div>
           <h1 className="fw-bold fs-800 text-accent-400">
             Home and Commercial
           </h1>
@@ -237,12 +290,17 @@ export default function Home() {
             cleaning needs. Contact us today to experience the best in the
             business!
           </p>
-          <button className="button">OUR SERVICES</button>
+          <Link
+            to="/services"
+            onClick={handleClick}
+            className="button services-btn"
+          >
+            OUR SERVICES
+          </Link>
         </div>
-        <div>
-          <img src={left_home} alt="" className="left-img" />
-          <img src={right_home} alt="" className="right-img" />
-        </div>
+          <div className="home-imgs">
+            <img src={home_img} alt="" className="home-img" />
+          </div>
       </section>
       <Footer />
     </Transition>
