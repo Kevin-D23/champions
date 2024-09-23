@@ -11,7 +11,7 @@ const TextTransitionUp = ({ children }) => {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
 
   const parentVariants = {

@@ -11,7 +11,7 @@ const TextTransitionRight = ({ children }) => {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   // Define animation variants for the parent and child components
   const parentVariants = {
@@ -26,7 +26,7 @@ const TextTransitionRight = ({ children }) => {
   };
 
   const childVariants = {
-    hidden: { opacity: 0, x:- 75 },
+    hidden: { opacity: 0, x: -75 },
     visible: { opacity: 1, x: 0 },
   };
 
@@ -42,7 +42,7 @@ const TextTransitionRight = ({ children }) => {
         <motion.div
           key={index}
           variants={childVariants}
-          transition={{ duration: 0.25, delay:.25 }}
+          transition={{ duration: 0.25, delay: 0.5 }}
         >
           {child}
         </motion.div>
