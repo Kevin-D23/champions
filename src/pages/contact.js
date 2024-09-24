@@ -82,7 +82,10 @@ export default function Contact() {
             </div>
           </TextTransitionRight>
           <TextTransitionRight>
-            <h1 className="fw-semi-bold fs-800 text-accent-500">
+            <h1
+              className="fw-semi-bold fs-800 text-accent-500"
+              style={{ marginBottom: "1rem" }}
+            >
               Send Us a Message
             </h1>
           </TextTransitionRight>
@@ -166,8 +169,12 @@ export default function Contact() {
           <div className="contact-page-info">
             <h1 className="fw-semi-bold fs-800 text-accent-500">Or Call Us</h1>
             <p className="fw-medium fs-500 text-secondary">(530)966-7141</p>
-            <h2 className="fw-medium fs-600 text-accent-300">Assistance Hours</h2>
-            <p className="fw-medium fs-500 text-secondary">Mon-Fri 7:00am - 6:00pm</p>
+            <h2 className="fw-medium fs-600 text-accent-300">
+              Assistance Hours
+            </h2>
+            <p className="fw-medium fs-500 text-secondary">
+              Mon-Fri 7:00am - 6:00pm
+            </p>
           </div>
         </section>
       </div>

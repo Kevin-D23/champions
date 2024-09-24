@@ -1,0 +1,98 @@
+.gallery-container {
+  padding: 0 1.3rem;
+  margin: auto;
+  max-width: 1150px;
+}
+
+.gallery-container p {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.gallery-container ul {
+  display: flex;
+  overflow-x: scroll;
+  list-style: none;
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+.gallery-container ul::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@media (max-width: 500px) {
+  .gallery-container ul::after {
+    content: ">";
+    position: absolute;
+    right: 1rem;
+    transform: translateY(3px);
+    font-size: 1.5rem;
+    color: var(--clr-accent-300); /* Adjust to your theme */
+    pointer-events: none; /* So it won't interfere with scrolling */
+    transition: opacity 0.3s ease;
+  }
+}
+
+.hide-indicator::after {
+  opacity: 0; /* Hide the arrow when at the end */
+}
+
+.gallery-container ul li {
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+}
+
+.gallery-active {
+  background-color: var(--clr-accent-300);
+  color: var(--clr-neutral-400);
+}
+
+.gallery-imgs-container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 6rem;
+}
+
+.gallery-imgs-container img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.open-image-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.open-image-container img {
+max-width: 500px;
+width: 100%;
+height: auto;
+margin:3rem;
+
+}
+
+.open-image-container button {
+    border: none;
+    background-color: transparent;
+    color: white;
+position: absolute;
+top: 1rem;
+right: 1rem;}
+
+@media (min-width: 645px) {
+  .gallery-imgs-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

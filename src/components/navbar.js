@@ -69,20 +69,20 @@ export default function Navbar() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                to={"/about"}
-                style={
-                  location.pathname === "/about"
-                    ? { color: "var(--clr-accent-300)" }
-                    : {}
-                }
-                onClick={handleClick}
+              {/* <li>
+                <Link
+                  to={"/about"}
+                  style={
+                    location.pathname === "/about"
+                      ? { color: "var(--clr-accent-300)" }
+                      : {}
+                  }
+                  onClick={handleClick}
 
-              >
-                About
-              </Link>
-            </li>
+                >
+                  About
+                </Link>
+              </li> */}
             <li>
               <Link
                 to={"/services"}
